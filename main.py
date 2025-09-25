@@ -20,8 +20,8 @@ import logging
 
 # Import our modules
 from app.document_processor import DocumentProcessor
-from app.rag_system import RAGSystem
-from app.ai_bot import AIBot
+from app.rag_system_stub import RAGSystem
+from app.ai_bot_stub import AIBot
 from app.database import DatabaseManager
 from app.auth import AuthManager
 
@@ -320,4 +320,4 @@ async def delete_document(
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=5000)
