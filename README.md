@@ -1,195 +1,325 @@
-# 🚀 AI Dev Tasks 🤖
+# 🇦🇿 Azerbaijani Court Case Sorter
 
-Welcome to **AI Dev Tasks**! This repository provides a collection of markdown files designed to supercharge your feature development workflow with AI-powered IDEs and CLIs. Originally built for [Cursor](https://cursor.sh/), these tools work with any AI coding assistant including Claude Code, Windsurf, and others. By leveraging these structured prompts, you can systematically approach building features, from ideation to implementation, with built-in checkpoints for verification.
+An AI-powered web application for processing, indexing, and searching Azerbaijani court documents with advanced natural language processing capabilities.
 
-Stop wrestling with monolithic AI requests and start guiding your AI collaborator step-by-step!
+## ✨ Features
 
-## ✨ The Core Idea
+### 🔍 **Smart Document Processing**
+- **PDF Processing**: Automatically extracts metadata from Azerbaijani court documents
+- **Metadata Extraction**: Identifies key information including:
+  - Court name (Məhkəmənin adı)
+  - Case number (İş nömrəsi)
+  - Judge name (Hakim)
+  - Case type (İşin növü)
+  - District (Rayon)
+  - Decision type (QƏTNAMƏ/QƏRAR)
+  - Year and dates
+  - Parties involved
 
-Building complex features with AI can sometimes feel like a black box. This workflow aims to bring structure, clarity, and control to the process by:
+### 🤖 **AI-Powered Search**
+- **Natural Language Queries**: Search in Azerbaijani using conversational language
+- **RAG System**: Retrieval-Augmented Generation with open-source LLMs
+- **Semantic Search**: Find documents based on meaning, not just keywords
+- **Dynamic Filtering**: Interconnected dropdown filters that update based on selections
 
-1. **Defining Scope:** Clearly outlining what needs to be built with a Product Requirement Document (PRD).
-2. **Detailed Planning:** Breaking down the PRD into a granular, actionable task list.
-3. **Iterative Implementation:** Guiding the AI to tackle one task at a time, allowing you to review and approve each change.
+### 💬 **Intelligent AI Bot**
+- **Azerbaijani Language Support**: Full Azerbaijani language processing
+- **Context-Aware Responses**: Understands legal terminology and context
+- **Query Analysis**: Breaks down complex queries into searchable components
+- **Conversational Interface**: Chat-like interaction for document discovery
 
-This structured approach helps ensure the AI stays on track, makes it easier to debug issues, and gives you confidence in the generated code.
+### 🗄️ **Advanced Database Management**
+- **SQLite Backend**: Efficient storage and retrieval of document metadata
+- **Vector Search**: ChromaDB integration for semantic similarity search
+- **Scalable Architecture**: Designed to handle millions of documents
+- **Admin Panel**: Document management and user administration
 
-## Workflow: From Idea to Implemented Feature 💡➡️💻
+### 🌐 **Modern Web Interface**
+- **Responsive Design**: Works on desktop and mobile devices
+- **Real-time Updates**: Live search results and filter updates
+- **File Upload**: Support for PDF and ZIP file uploads
+- **Progress Tracking**: Visual feedback for document processing
+- **Export Functionality**: Export search results in various formats
 
-Here's the step-by-step process using the `.md` files in this repository:
+## 🚀 Quick Start
 
-### 1️⃣ Create a Product Requirement Document (PRD)
+### Prerequisites
+- Python 3.8+
+- pip (Python package manager)
+- Sample PDF court documents (optional, for testing)
 
-First, lay out the blueprint for your feature. A PRD clarifies what you're building, for whom, and why.
+### Installation
 
-You can create a lightweight PRD directly within your AI tool of choice:
+1. **Clone or download the project files**
 
-1. Ensure you have the `create-prd.md` file from this repository accessible.
-2. In your AI tool, initiate PRD creation:
-
-    ```text
-    Use @create-prd.md
-    Here's the feature I want to build: [Describe your feature in detail]
-    Reference these files to help you: [Optional: @file1.py @file2.ts]
-    ```
-    *(Pro Tip: For Cursor users, MAX mode is recommended for complex PRDs if your budget allows for more comprehensive generation.)*
-
-    ![Example of initiating PRD creation](https://pbs.twimg.com/media/Go6DDlyX0AAS7JE?format=jpg&name=large)
-
-### 2️⃣ Generate Your Task List from the PRD
-
-With your PRD drafted (e.g., `MyFeature-PRD.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
-
-1. Ensure you have `generate-tasks.md` accessible.
-2. In your AI tool, use the PRD to create tasks:
-
-    ```text
-    Now take @MyFeature-PRD.md and create tasks using @generate-tasks.md
-    ```
-    *(Note: Replace `@MyFeature-PRD.md` with the actual filename of the PRD you generated in step 1.)*
-
-    ![Example of generating tasks from PRD](https://pbs.twimg.com/media/Go6FITbWkAA-RCT?format=jpg&name=medium)
-
-### 3️⃣ Examine Your Task List
-
-You'll now have a well-structured task list, often with tasks and sub-tasks, ready for the AI to start working on. This provides a clear roadmap for implementation.
-
-![Example of a generated task list](https://pbs.twimg.com/media/Go6GNuOWsAEcSDm?format=jpg&name=medium)
-
-### 4️⃣ Instruct the AI to Work Through Tasks (and Mark Completion)
-
-To ensure methodical progress and allow for verification, we'll use `process-task-list.md`. This command instructs the AI to focus on one task at a time and wait for your go-ahead before moving to the next.
-
-1. Create or ensure you have the `process-task-list.md` file accessible.
-2. In your AI tool, tell the AI to start with the first task (e.g., `1.1`):
-
-    ```text
-    Please start on task 1.1 and use @process-task-list.md
-    ```
-    *(Important: You only need to reference `@process-task-list.md` for the *first* task. The instructions within it guide the AI for subsequent tasks.)*
-
-    The AI will attempt the task and then prompt you to review.
-
-    ![Example of starting on a task with process-task-list.md](https://pbs.twimg.com/media/Go6I41KWcAAAlHc?format=jpg&name=medium)
-
-### 5️⃣ Review, Approve, and Progress ✅
-
-As the AI completes each task, you review the changes.
-
-* If the changes are good, simply reply with "yes" (or a similar affirmative) to instruct the AI to mark the task complete and move to the next one.
-* If changes are needed, provide feedback to the AI to correct the current task before moving on.
-
-You'll see a satisfying list of completed items grow, providing a clear visual of your feature coming to life!
-
-![Example of a progressing task list with completed items](https://pbs.twimg.com/media/Go6KrXZWkAA_UuX?format=jpg&name=medium)
-
-While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
-
-### Video Demonstration 🎥
-
-If you'd like to see this in action, I demonstrated it on [Claire Vo's "How I AI" podcast](https://www.youtube.com/watch?v=fD4ktSkNCw4).
-
-![Demonstration of AI Dev Tasks on How I AI Podcast](https://img.youtube.com/vi/fD4ktSkNCw4/maxresdefault.jpg)
-
-## 🗂️ Files in this Repository
-
-* **`create-prd.md`**: Guides the AI in generating a Product Requirement Document for your feature.
-* **`generate-tasks.md`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
-* **`process-task-list.md`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
-
-## 🌟 Benefits
-
-* **Structured Development:** Enforces a clear process from idea to code.
-* **Step-by-Step Verification:** Allows you to review and approve AI-generated code at each small step, ensuring quality and control.
-* **Manages Complexity:** Breaks down large features into smaller, digestible tasks for the AI, reducing the chance of it getting lost or generating overly complex, incorrect code.
-* **Improved Reliability:** Offers a more dependable approach to leveraging AI for significant development work compared to single, large prompts.
-* **Clear Progress Tracking:** Provides a visual representation of completed tasks, making it easy to see how much has been done and what's next.
-
-## 🛠️ How to Use
-
-1. **Clone or Download:** Get these `.md` files into your project or a central location where your AI tool can access them.
+2. **Install dependencies:**
    ```bash
-   git clone https://github.com/snarktank/ai-dev-tasks.git
-   ```
-2. **Follow the Workflow:** Systematically use the `.md` files in your AI assistant as described in the workflow above.
-3. **Adapt and Iterate:**
-    * Feel free to modify the prompts within the `.md` files to better suit your specific needs or coding style.
-    * If the AI struggles with a task, try rephrasing your initial feature description or breaking down tasks even further.
-
-## Tool-Specific Instructions
-
-### Cursor
-
-Cursor users can follow the workflow described above, using the `.md` files directly in the Agent chat:
-
-1. Ensure you have the files from this repository accessible
-2. In Cursor's Agent chat, reference files with `@` (e.g., `@create-prd.md`)
-3. Follow the 5-step workflow as outlined above
-4. **MAX Mode for PRDs:** Using MAX mode in Cursor for PRD creation can yield more thorough results if your budget supports it
-
-### Claude Code
-
-To use these tools with Claude Code:
-
-1. **Copy files to your repo**: Copy the three `.md` files to a subdirectory in your project (e.g., `/ai-dev-tasks`)
-
-2. **Reference in CLAUDE.md**: Add these lines to your project's `./CLAUDE.md` file:
-   ```
-   # AI Dev Tasks
-   Use these files when I request structured feature development using PRDs:
-   /ai-dev-tasks/create-prd.md
-   /ai-dev-tasks/generate-tasks.md
-   /ai-dev-tasks/process-task-list.md
+   pip install -r requirements.txt
    ```
 
-3. **Create custom commands** (optional): For easier access, create these files in `.claude/commands/`:
-   - `.claude/commands/create-prd.md` with content:
-     ```
-     Please use the structured workflow in /ai-dev-tasks/create-prd.md to help me create a PRD for a new feature.
-     ```
-   - `.claude/commands/generate-tasks.md` with content:
-     ```
-     Please generate tasks from the PRD using /ai-dev-tasks/generate-tasks.md
-     If not explicitly told which PRD to use, generate a list of PRDs and ask the user to select one under `/tasks` or create a new one using `create-prd.md`:
-     - assume it's stored under `/tasks` and has a filename starting with `prd-` (e.g., `prd-[name].md`)
-     - it should not already have a corresponding task list in `/tasks` (e.g., `tasks-prd-[name].md`)
-     - **always** ask the user to confirm the PRD file name before proceeding
-     Make sure to provide options in number lists so I can respond easily (if multiple options).
-     ```
-   - `.claude/commands/process-task-list.md` with content:
-     ```
-     Please process the task list using /ai-dev-tasks/process-task-list.md
-     ```
+3. **Run the test script to verify installation:**
+   ```bash
+   python test_system.py
+   ```
 
-   Make sure to restart Claude Code after adding these files (`/exit`).
-   Then use commands like `/create-prd` to quickly start the workflow.
-   Note: This setup can also be adopted for a global level across all your projects, please refer to the Claude Code documentation [here](https://docs.anthropic.com/en/docs/claude-code/memory) and [here](https://docs.anthropic.com/en/docs/claude-code/common-workflows#create-personal-slash-commands).
+4. **Start the web application:**
+   ```bash
+   python main.py
+   ```
 
-### Other Tools
+5. **Open your browser and navigate to:**
+   ```
+   http://localhost:8000
+   ```
 
-For other AI-powered IDEs or CLIs:
+### Default Login Credentials
+- **Username**: `admin`
+- **Password**: `admin123`
 
-1. Copy the `.md` files to your project
-2. Reference them according to your tool's documentation
-3. Follow the same workflow principles
+## 📁 Project Structure
 
-## 💡 Tips for Success
+```
+├── main.py                 # Main FastAPI application
+├── requirements.txt        # Python dependencies
+├── test_system.py          # System test script
+├── README.md              # This file
+├──
+├── app/                   # Core application modules
+│   ├── __init__.py
+│   ├── document_processor.py  # PDF processing and metadata extraction
+│   ├── database.py           # Database management
+│   ├── rag_system.py         # RAG system with vector search
+│   ├── ai_bot.py             # AI bot for natural language queries
+│   └── auth.py               # Authentication and authorization
+│
+├── templates/             # HTML templates
+│   └── index.html            # Main web interface
+│
+└── static/               # Static assets
+    ├── css/
+    │   └── style.css         # Custom CSS styles
+    └── js/
+        └── app.js            # Frontend JavaScript
+```
 
-* **Be Specific:** The more context and clear instructions you provide (both in your initial feature description and any clarifications), the better the AI's output will be.
-* **Use a Capable Model:** The free version of Cursor currently uses less capable AI models that often struggle to follow the structured instructions in this workflow. For best results, consider upgrading to the Pro plan to ensure consistent, accurate task execution.
-* **MAX Mode for PRDs:** As mentioned, using MAX mode in Cursor for PRD creation (`create-prd.mdc`) can yield more thorough and higher-quality results if your budget supports it.
-* **Correct File Tagging:** Always ensure you're accurately tagging the PRD filename (e.g., `@MyFeature-PRD.md`) when generating tasks.
-* **Patience and Iteration:** AI is a powerful tool, but it's not magic. Be prepared to guide, correct, and iterate. This workflow is designed to make that iteration process smoother.
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env` file in the root directory:
+
+```env
+# Database Configuration
+DATABASE_PATH=./court_documents.db
+
+# RAG System Configuration
+RAG_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CHROMA_DB_PATH=./chroma_db
+
+# Authentication
+JWT_SECRET_KEY=your-secret-key-change-in-production
+
+# Application
+DEBUG=True
+HOST=0.0.0.0
+PORT=8000
+```
+
+### Supported File Types
+- **PDF**: Individual court document files
+- **ZIP**: Archives containing multiple PDF files
+
+### Supported Courts
+The system is pre-configured to recognize common Azerbaijani courts:
+- Ağdam Rayon Məhkəməsi
+- Şirvan Apellyasiya Məhkəməsi
+- Şirvan İnzibati Məhkəməsi
+- Şirvan Kommersiya Məhkəməsi
+
+## 🧪 Testing
+
+### Run System Tests
+```bash
+python test_system.py
+```
+
+This will test:
+- ✅ Document processing with sample files
+- ✅ Database operations
+- ✅ RAG system functionality
+- ✅ AI bot responses
+- ✅ Full pipeline integration
+
+### Manual Testing
+1. **Upload Documents**: Use the web interface to upload PDF files
+2. **Search**: Try natural language queries in Azerbaijani
+3. **Filter**: Use dynamic filters to narrow down results
+4. **Chat**: Interact with the AI bot for assistance
+
+## 🔍 Usage Examples
+
+### Natural Language Queries
+```
+"Hakim Fikrət Hüseynovun qərarları"
+"Ağdam rayon məhkəməsinin 2025-ci il qərarları"
+"Mülki işlər üzrə qətnamələr"
+"Şirvan Apellyasiya Məhkəməsinin inzibati işləri"
+```
+
+### Structured Search
+- Filter by judge name
+- Filter by court type
+- Filter by year
+- Filter by case type
+- Combine multiple filters
+
+## 🏗️ Architecture
+
+### Core Components
+
+1. **Document Processor** (`document_processor.py`)
+   - PDF text extraction using pdfplumber
+   - Azerbaijani text pattern recognition
+   - Metadata extraction with regex patterns
+   - Document validation and cleaning
+
+2. **Database Manager** (`database.py`)
+   - SQLite database with optimized schema
+   - Document storage and retrieval
+   - Metadata indexing for fast filtering
+   - Filter options caching
+
+3. **RAG System** (`rag_system.py`)
+   - Sentence transformer embeddings
+   - ChromaDB vector storage
+   - Semantic similarity search
+   - Document chunking and indexing
+
+4. **AI Bot** (`ai_bot.py`)
+   - Natural language understanding
+   - Query analysis and parsing
+   - Azerbaijani legal terminology
+   - Conversational responses
+
+5. **Authentication** (`auth.py`)
+   - JWT-based authentication
+   - User management
+   - Role-based access control
+   - Password hashing with bcrypt
+
+### Technology Stack
+- **Backend**: FastAPI (Python)
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Database**: SQLite with ChromaDB
+- **AI/ML**: Sentence Transformers, PyTorch
+- **Document Processing**: pdfplumber, PyPDF2
+- **Authentication**: JWT, bcrypt
+- **UI Framework**: Bootstrap 5
+
+## 🔒 Security Features
+
+- **JWT Authentication**: Secure token-based authentication
+- **Password Hashing**: bcrypt for secure password storage
+- **Input Validation**: Comprehensive input sanitization
+- **File Upload Security**: File type validation and size limits
+- **SQL Injection Protection**: Parameterized queries
+- **XSS Protection**: HTML escaping and content sanitization
+
+## 📊 Performance
+
+### Scalability Features
+- **Vector Indexing**: Efficient similarity search with ChromaDB
+- **Database Optimization**: Indexed queries and connection pooling
+- **Chunked Processing**: Memory-efficient document processing
+- **Caching**: Filter options and metadata caching
+- **Async Processing**: Non-blocking file uploads and processing
+
+### Resource Requirements
+- **Minimum**: 4GB RAM, 2 CPU cores
+- **Recommended**: 8GB RAM, 4 CPU cores
+- **Storage**: 10GB+ for document storage and embeddings
+
+## 🚀 Deployment
+
+### Local Deployment
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run application
+python main.py
+```
+
+### Production Deployment (Docker)
+```dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+EXPOSE 8000
+
+CMD ["python", "main.py"]
+```
+
+### Cloud Deployment
+The system is designed to work with:
+- **Replit**: Ready-to-deploy configuration
+- **Heroku**: With Gunicorn WSGI server
+- **AWS**: EC2, Lambda, or ECS
+- **Google Cloud**: Cloud Run or Compute Engine
+- **Azure**: Container Instances or VMs
 
 ## 🤝 Contributing
 
-Got ideas to improve these `.md` files or have new ones that fit this workflow? Contributions are welcome!
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new functionality
+5. Submit a pull request
 
-Please feel free to:
+### Development Guidelines
+- Follow PEP 8 style guidelines
+- Add docstrings to all functions
+- Include type hints
+- Write comprehensive tests
+- Update documentation
 
-* Open an issue to discuss changes or suggest new features.
-* Submit a pull request with your enhancements.
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+For support and questions:
+- Create an issue in the repository
+- Check the documentation
+- Review the test files for usage examples
+
+## 🔄 Future Enhancements
+
+### Planned Features
+- [ ] Multi-language support (English, Russian)
+- [ ] Advanced analytics and reporting
+- [ ] Batch document processing API
+- [ ] Integration with e-mehkeme.gov.az scraping
+- [ ] Mobile application
+- [ ] Real-time collaboration features
+- [ ] Advanced export formats (PDF, Excel, CSV)
+- [ ] Machine learning model fine-tuning
+- [ ] Document similarity scoring
+- [ ] Citation network analysis
+
+### Roadmap
+- **v1.1**: Enhanced UI/UX and performance optimizations
+- **v1.2**: Multi-language support and advanced analytics
+- **v2.0**: Integration with external court databases
+- **v2.1**: Machine learning model improvements
+- **v3.0**: Enterprise features and API expansion
 
 ---
 
-Happy AI-assisted developing!
+**Built with ❤️ for the Azerbaijani legal community**
+
+*Empowering legal professionals with AI-driven document discovery and analysis*
